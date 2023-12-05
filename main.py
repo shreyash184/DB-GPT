@@ -10,10 +10,11 @@ def query_datanase(query):
 conn = dbConnect.create_connection()
 
 schemas = dbConnect.get_schema_representation()
-print(schemas['employees'])
 
+productSchema = schemas['products']
+orderSchema = schemas['orders']
 # formated the system message with schema
-formatted_system_message = SYSTEM_MESSAGE.format(schema=schemas['employees'])
+formatted_system_message = SYSTEM_MESSAGE.format(productSchema, orderSchema)
 print(formatted_system_message)
 
 user_message = "Show me all employee names which has salary more thatn 5000"
