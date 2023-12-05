@@ -11,6 +11,9 @@ def query_database(query):
 conn = dbConnect.create_connection()
 
 schemas = dbConnect.get_schema_representation()
+schema1 = schemas['products']
+schema2 = schemas['orders']
+print(schema1)
 
 st.title("SQL Query Generator with GPT-3.5-turbo")
 st.write("enter your message to generate SQL and view results.")
@@ -18,7 +21,8 @@ st.write("enter your message to generate SQL and view results.")
 user_message = st.text_input("Enter your message: ")
 
 if user_message:
-    formatted_system_message = SYSTEM_MESSAGE.format(schema=schemas['employees'])
+    # formated the system message with schema
+    formatted_system_message = SYSTEM_MESSAGE.format(schema1 = schema1, schema2 = schema2)
 
     response = openai_test.get_response(formatted_system_message, user_message)
     json_response = json.loads(response)

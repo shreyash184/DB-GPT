@@ -1,0 +1,9 @@
+give all records of products table
+
+give all records of orders table
+
+give me orderID from orders table and price of product from products table in same table using join
+
+
+suppose we want to find the products that have a price less than the price of all products ordered in order 1001 in orders table  using join operation .
+

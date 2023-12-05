@@ -3,7 +3,7 @@ from openai import OpenAI
 
 # print(os.environ)
 
-# client = OpenAI(api_key="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")
+
 
 
 # completion = client.chat.completions.create(
@@ -16,7 +16,7 @@ from openai import OpenAI
 # print(completion.choices[0].message.content)
 
 def get_response(system_message, user_message):
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="<API_KEY>")
 
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
